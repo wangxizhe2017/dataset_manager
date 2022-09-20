@@ -1,7 +1,6 @@
 from pathlib import Path
 
-from basic.bbox import BBox
-from basic.bbox_list import BBoxList
+from .bbox_list import BBoxList
 
 
 class ImageDict(dict):

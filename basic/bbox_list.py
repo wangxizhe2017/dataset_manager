@@ -1,4 +1,4 @@
-from basic.bbox import BBox
+from .bbox import BBox
 
 
 class BBoxList(list):
