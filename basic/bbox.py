@@ -80,6 +80,15 @@ class BBox:
         assert isinstance(pt, (list, tuple)) and len(pt) == 2
         return self._l_x <= pt[0] <= self._r_x and self._t_y <= pt[1] <= self._b_y
 
+    def is_center_in(self, other) -> bool:
+        """Is the center in the input bbox"""
+        assert isinstance(other, BBox)
+        return other.is_pt_in(self.center)
+
+    def is_mutual_center_in(self, other) -> bool:
+        assert isinstance(other, BBox)
+        return self.is_center_in(other.center) and other.is_pt_in(self.center)
+
     def IoU(self, other) -> Union[float, int]:
         assert isinstance(other, BBox)
 
